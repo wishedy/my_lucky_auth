@@ -26,9 +26,6 @@ import variables from '@/styles/variables.scss'
 
 export default {
   components: { SidebarItem, Logo },
-  mounted() {
-    console.log(this.permission_routes)
-  },
   computed: {
     ...mapGetters([
       'permission_routes',
@@ -52,6 +49,9 @@ export default {
     isCollapse() {
       return !this.sidebar.opened
     }
+  },
+  mounted() {
+    console.log(this.permission_routes)
   }
 }
 </script>
