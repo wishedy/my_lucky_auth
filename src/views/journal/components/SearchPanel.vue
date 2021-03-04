@@ -14,7 +14,7 @@
           v-model="formData.title"
           class="search-box"
           type="text"
-          placeholder="请输入员工ID"
+          placeholder="请输入操作人ID"
           @keyup.enter.native="handleSearch"
         />
       </el-form-item>
@@ -26,39 +26,15 @@
           v-model="formData.title"
           class="search-box"
           type="text"
-          placeholder="请输入姓名"
+          placeholder="请输入操作人姓名"
           @keyup.enter.native="handleSearch"
         />
       </el-form-item>
       <el-form-item
-        label="邮箱:"
-        prop="search"
-      >
-        <el-input
-          v-model="formData.title"
-          class="search-box"
-          type="text"
-          placeholder="请输入邮箱"
-          @keyup.enter.native="handleSearch"
-        />
-      </el-form-item>
-      <el-form-item
-        label="手机号:"
-        prop="search"
-      >
-        <el-input
-          v-model="formData.title"
-          class="search-box"
-          type="text"
-          placeholder="请输入手机号"
-          @keyup.enter.native="handleSearch"
-        />
-      </el-form-item>
-      <el-form-item
-        label="角色:"
+        label="修改类型:"
         prop="status"
       >
-        <el-select v-model="formData.role" clearable placeholder="请选择角色" class="search-box">
+        <el-select v-model="formData.role" clearable placeholder="请选择操作类型" class="search-box">
           <el-option
             v-for="item in roles"
             :key="item.id"
@@ -68,17 +44,15 @@
         </el-select>
       </el-form-item>
       <el-form-item
-        label="状态:"
-        prop="status"
+        label="日期:"
+        prop="search"
       >
-        <el-select v-model="formData.status" clearable placeholder="请选择管理员状态" class="search-box">
-          <el-option
-            v-for="item in status"
-            :key="item.id"
-            :label="item.name"
-            :value="item.id"
-          />
-        </el-select>
+        <el-date-picker
+          v-model="date"
+          type="date"
+          :picker-options="pickerOptions"
+          placeholder="选择日期"
+        />
       </el-form-item>
       <el-form-item class="form-button-line block">
         <el-button
@@ -100,6 +74,32 @@ export default {
   name: 'AdminSearch',
   data() {
     return {
+      date: '',
+      pickerOptions: {
+        disabledDate(time) {
+          return time.getTime() > Date.now()
+        },
+        shortcuts: [{
+          text: '今天',
+          onClick(picker) {
+            picker.$emit('pick', new Date())
+          }
+        }, {
+          text: '昨天',
+          onClick(picker) {
+            const date = new Date()
+            date.setTime(date.getTime() - 3600 * 1000 * 24)
+            picker.$emit('pick', date)
+          }
+        }, {
+          text: '一周前',
+          onClick(picker) {
+            const date = new Date()
+            date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+            picker.$emit('pick', date)
+          }
+        }]
+      },
       status: [
         {
           id: 0,
@@ -112,22 +112,26 @@ export default {
       ],
       roles: [{
         id: 0,
-        name: '暂无角色'
+        name: '部门'
       }, {
         id: 1,
-        name: '超级管理员'
+        name: '路由'
       }, {
         id: 2,
-        name: '普通管理员'
+        name: '角色'
       }, {
         id: 3,
-        name: '小编'
+        name: '员工'
+      }, {
+        id: 4,
+        name: '权限'
       }],
       originalForm: {
         status: '',
         role: '',
         title: ''
       },
+
       formData: {
         status: '',
         role: '',

@@ -29,3 +29,18 @@ $--font-path: "~element-ui/lib/theme-chalk/fonts";
 :export {
   theme: $--color-primary;
 }
+.el-main{
+  padding: 0;
+}
+.search-wrap{
+  border-bottom: 1px solid #cfd7e5;
+}
+.handle-wrap,.search-wrap,.table-wrap{
+  padding: 20px;
+}
+.handle-title{
+  padding: 20px 0;
+}
+.content-panel{
+  padding: 20px 0;
+}

@@ -55,19 +55,6 @@
         />
       </el-form-item>
       <el-form-item
-        label="角色:"
-        prop="status"
-      >
-        <el-select v-model="formData.role" clearable placeholder="请选择角色" class="search-box">
-          <el-option
-            v-for="item in roles"
-            :key="item.id"
-            :label="item.name"
-            :value="item.id"
-          />
-        </el-select>
-      </el-form-item>
-      <el-form-item
         label="状态:"
         prop="status"
       >

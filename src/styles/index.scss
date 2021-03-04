@@ -189,3 +189,16 @@ aside {
 .multiselect--active {
   z-index: 1000 !important;
 }
+.page {
+  background: #fff;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  left: 60px;
+  z-index: 100;
+  padding: 4px 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}

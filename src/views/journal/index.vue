@@ -1,23 +1,20 @@
 <template>
   <section class="el-main">
     <SearchPanel />
-    <HandleBar />
     <TablePanel @handleEdit="editData" />
     <EditPanel :visible.sync="visible" @handleCancel="closeEdit" />
   </section>
 </template>
 <script>
-import EditPanel from '@/views/administrator/components/EditPanel'
-import SearchPanel from '@/views/administrator/components/SearchPanel'
-import TablePanel from '@/views/administrator/components/TablePanel'
-import HandleBar from '@/views/administrator/components/HandleBar'
+import EditPanel from '@/views/journal/components/EditPanel'
+import SearchPanel from '@/views/journal/components/SearchPanel'
+import TablePanel from '@/views/journal/components/TablePanel'
 export default {
-  name: 'Administrator',
+  name: 'Journal',
   components: {
     SearchPanel,
     TablePanel,
-    EditPanel,
-    HandleBar
+    EditPanel
   },
   data() {
     return {
