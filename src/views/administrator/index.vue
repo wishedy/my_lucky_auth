@@ -19,17 +19,17 @@ export default {
     EditPanel,
     HandleBar
   },
-  data() {
+  data () {
     return {
       visible: false
     }
   },
   methods: {
-    closeEdit() {
+    closeEdit () {
       console.log('触发')
       this.visible = false
     },
-    editData() {
+    editData () {
       this.visible = true
     }
   }

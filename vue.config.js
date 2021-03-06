@@ -1,7 +1,6 @@
 'use strict'
 const path = require('path')
 const defaultSettings = require('./src/settings.js')
-
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -36,8 +35,7 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
-    },
-    before: require('./mock/mock-server.js')
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
@@ -96,15 +94,19 @@ module.exports = {
       .options({
         symbolId: 'icon-[name]'
       })
-    config.module
+    process.env.NODE_ENV === 'development'&&config.module
       .rule('eslint')
       .use('eslint-loader')
       .loader('eslint-loader')
       .tap(options => {
-        options.fix = true
-        options.emitWarning = true
+        options&&(options.fix = true)
+        options&&(options.emitWarning = true)
         return options
       })
+    // 移除 prefetch 插件
+    config.plugins.delete('prefetch')
+    // 移除 preload 插件
+    config.plugins.delete('preload')
     config
       .when(process.env.NODE_ENV !== 'development',
         config => {

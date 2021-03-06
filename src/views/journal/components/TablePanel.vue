@@ -34,7 +34,7 @@
 <script>
 export default {
   name: 'AdminTable',
-  data() {
+  data () {
     return {
       page: 1,
       pageSize: 20,
@@ -75,10 +75,10 @@ export default {
     }
   },
   methods: {
-    handleSizeChange(size) {
+    handleSizeChange (size) {
       console.log(size)
     },
-    handleCurrentChange(page) {
+    handleCurrentChange (page) {
       console.log(page)
     }
   }

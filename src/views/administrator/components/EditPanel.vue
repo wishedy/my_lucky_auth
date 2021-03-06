@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-    handleConfirm() {
+    handleConfirm () {
       console.log('点击确定')
     }
   }

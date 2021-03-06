@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-Vue.use(Router)
-
 /* Layout */
 import Layout from '@/layout'
+
+Vue.use(Router)
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -84,8 +84,8 @@ export const constantRoutes = [
       {
         path: 'router',
         component: () => import('@/views/admin-router/index'),
-        name: 'Router',
-        meta: { title: '路由管理', icon: 'el-icon-cpu', affix: true }
+        name: 'Router', //, affix: true 是否直接挂载在顶部导航栏
+        meta: { title: '路由管理', icon: 'el-icon-cpu' }
       }
     ]
   },
@@ -97,7 +97,7 @@ export const constantRoutes = [
         path: 'role',
         component: () => import('@/views/user-roles/index'),
         name: 'Role',
-        meta: { title: '角色管理', icon: 'el-icon-s-custom', affix: true }
+        meta: { title: '角色管理', icon: 'el-icon-s-custom' }
       }
     ]
   },
@@ -109,7 +109,7 @@ export const constantRoutes = [
         path: 'organization',
         component: () => import('@/views/organization/index'),
         name: 'Organization',
-        meta: { title: '组织架构', icon: 'el-icon-office-building', affix: true }
+        meta: { title: '组织架构', icon: 'el-icon-office-building' }
       }
     ]
   },
@@ -121,7 +121,7 @@ export const constantRoutes = [
         path: 'log',
         component: () => import('@/views/journal/index'),
         name: 'Log',
-        meta: { title: '查看日志', icon: 'el-icon-date', affix: true }
+        meta: { title: '查看日志', icon: 'el-icon-date' }
       }
     ]
   }
@@ -137,7 +137,7 @@ const createRouter = () => new Router({
 const router = createRouter()
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
-export function resetRouter() {
+export function resetRouter () {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router
 }

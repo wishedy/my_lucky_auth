@@ -83,7 +83,7 @@
 <script>
 export default {
   name: 'ContentPanel',
-  data() {
+  data () {
     const data = [{
       id: 1,
       label: '角色组1',
@@ -276,13 +276,13 @@ export default {
     }
   },
   methods: {
-    addRoleGroup() {
+    addRoleGroup () {
       this.$emit('handleAddRoleGroup')
     },
-    addRole() {
+    addRole () {
       this.$emit('handleAddRole')
     },
-    edit() {
+    edit () {
       this.$emit('handleEdit')
     }
   }

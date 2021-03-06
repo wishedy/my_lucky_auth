@@ -13,16 +13,16 @@ export default {
     ContentPanel,
     EditGroupPanel
   },
-  data() {
+  data () {
     return {
       visible: false
     }
   },
   methods: {
-    editGroup() {
+    editGroup () {
       this.visible = true
     },
-    closeEdit() {
+    closeEdit () {
       console.log('触发')
       this.visible = false
     }

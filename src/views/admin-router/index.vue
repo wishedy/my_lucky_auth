@@ -13,13 +13,13 @@ export default {
     EditPanel,
     ContentPanel
   },
-  data() {
+  data () {
     return {
       visible: false
     }
   },
   methods: {
-    closeEdit() {
+    closeEdit () {
       console.log('触发')
       this.visible = false
     }

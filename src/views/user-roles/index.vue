@@ -16,28 +16,28 @@ export default {
     EditRolePanel,
     ContentPanel
   },
-  data() {
+  data () {
     return {
       visible: false,
       roleVisible: false
     }
   },
   methods: {
-    editGroup() {
+    editGroup () {
       this.visible = true
     },
-    editRole() {
+    editRole () {
       this.roleVisible = true
     },
-    closeEdit() {
+    closeEdit () {
       console.log('触发')
       this.visible = false
     },
-    closeRoleEdit() {
+    closeRoleEdit () {
       console.log('触发')
       this.roleVisible = false
     },
-    editData() {
+    editData () {
       this.visible = true
     }
   }

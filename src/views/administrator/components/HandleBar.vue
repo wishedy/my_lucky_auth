@@ -17,7 +17,7 @@
 export default {
   name: 'HandleBar',
   methods: {
-    handleLeave() {
+    handleLeave () {
       const _this = this
       _this.$confirm('员工离职后，员工将无法登陆相关系统，是否确定离职？', '确认信息', {
         distinguishCancelAndClose: true,

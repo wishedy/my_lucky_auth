@@ -85,7 +85,7 @@
 <script>
 export default {
   name: 'AdminSearch',
-  data() {
+  data () {
     return {
       status: [
         {
@@ -123,17 +123,17 @@ export default {
     }
   },
   methods: {
-    handleSearch() {
+    handleSearch () {
       this.$emit('search', this.formData)
     },
-    handleReset() {
+    handleReset () {
       const _this = this
       _this.formData = JSON.parse(JSON.stringify(_this.originalForm))
       console.log(_this.formData)
       console.log('重置参数')
       _this.$emit('search', _this.formData)
     },
-    handleCreate() {
+    handleCreate () {
       this.$emit('create')
     }
   }

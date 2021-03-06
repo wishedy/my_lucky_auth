@@ -44,7 +44,7 @@ export default {
     SearchPanel,
     TablePanel
   },
-  data() {
+  data () {
     const data = [{
       id: 1,
       label: '部门组1',
@@ -237,14 +237,14 @@ export default {
     }
   },
   methods: {
-    addRoleGroup() {
+    addRoleGroup () {
       console.log('点击')
       this.$emit('handleAddRoleGroup')
     },
-    addRole() {
+    addRole () {
       this.$emit('handleAddRole')
     },
-    edit() {
+    edit () {
       this.$emit('handleEdit')
     }
   }

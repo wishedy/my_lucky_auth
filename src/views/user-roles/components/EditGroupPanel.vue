@@ -28,7 +28,7 @@ export default {
       default: false
     }
   },
-  data() {
+  data () {
     return {
       labelPosition: 'right',
       rules: {
@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    handleConfirm() {
+    handleConfirm () {
       console.log('点击确定')
     }
   }

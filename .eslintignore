@@ -1,4 +1,11 @@
 build/*.js
 src/assets
+src/styles
+src/layout/*
+/src/components
 public
 dist
+node_modules/*
+src/utils/*.js
+src/store/*.js
+src/store/modules/*js

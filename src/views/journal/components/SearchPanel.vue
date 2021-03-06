@@ -72,28 +72,28 @@
 <script>
 export default {
   name: 'AdminSearch',
-  data() {
+  data () {
     return {
       date: '',
       pickerOptions: {
-        disabledDate(time) {
+        disabledDate (time) {
           return time.getTime() > Date.now()
         },
         shortcuts: [{
           text: '今天',
-          onClick(picker) {
+          onClick (picker) {
             picker.$emit('pick', new Date())
           }
         }, {
           text: '昨天',
-          onClick(picker) {
+          onClick (picker) {
             const date = new Date()
             date.setTime(date.getTime() - 3600 * 1000 * 24)
             picker.$emit('pick', date)
           }
         }, {
           text: '一周前',
-          onClick(picker) {
+          onClick (picker) {
             const date = new Date()
             date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
             picker.$emit('pick', date)
@@ -140,17 +140,17 @@ export default {
     }
   },
   methods: {
-    handleSearch() {
+    handleSearch () {
       this.$emit('search', this.formData)
     },
-    handleReset() {
+    handleReset () {
       const _this = this
       _this.formData = JSON.parse(JSON.stringify(_this.originalForm))
       console.log(_this.formData)
       console.log('重置参数')
       _this.$emit('search', _this.formData)
     },
-    handleCreate() {
+    handleCreate () {
       this.$emit('create')
     }
   }

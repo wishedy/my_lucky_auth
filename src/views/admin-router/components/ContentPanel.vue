@@ -87,7 +87,7 @@ export default {
   components: {
     SelectIcon
   },
-  data() {
+  data () {
     const data = [{
       id: 1,
       label: 'MOP系统',
